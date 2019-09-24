@@ -1,2 +1,107 @@
-
 @import "utils/reset";
+
+
+.app2 {
+    // display: flex;
+    height: 500px;
+    width: 500px;
+    background-color: green;
+    margin: 0 auto;
+    // flex-direction: column;
+    position: relative;
+
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    height: max-content;
+}
+
+.pcBlock,
+.playerBlock {
+    display: flex;
+    width: 50%;
+    margin: 10px 5px;
+
+
+}
+
+.pcIcon,
+.playerIcon {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+}
+
+.pcIcon {
+    background: transparent url('./../img/pcIcon.png') center/cover no-repeat;
+}
+
+.playerIcon {
+    background: transparent url('./../img/playerIcon.png') center/cover no-repeat;
+    // background-size: cover;
+    order: 1;
+}
+
+.pcHealth,
+.playerHealth {
+    height: 25px;
+    flex-grow: 1;
+    border: 2px solid wheat;
+    position: relative;
+    text-align: center;
+    color: wheat;
+    line-height: 23px;
+    font-weight: bold;
+    z-index: 1;
+    overflow: hidden;
+   
+}
+
+.gameField {
+    width: 290px;
+    max-height: 450px;
+    margin: 0 auto;
+    overflow-y: auto;
+    margin-top: -70px;
+    color: wheat;
+    padding-bottom: 20px;
+    // margin-bottom: 30px;
+
+    & p {
+        font-size: 18px;
+        line-height: 18px;
+
+    }
+}
+
+.inputBlock {
+    display: flex;
+    background-color: #303030;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
+}
+
+input {
+    background: transparent;
+    flex-grow: 1;
+    height: 30px;
+    color: wheat;
+    padding: 2px 10px;
+    font-size: 20px;
+}
+
+button {
+    background: rgba(19, 15, 15, 0.767);
+    color: wheat
+}
+
+.pcHealthBar,
+.playerHealthBar {
+  
+}
