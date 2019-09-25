@@ -114,7 +114,8 @@ export function createInterface() {
     // input
     input.classList.add('input');
     input.type = 'text';
-    input.setAttribute('style', inputStyle);
+    input.setAttribute('style', inputStyle.style);
+    input.placeholder = inputStyle.placeholder;
 
     // button
     actionButton.classList.add('actionButton');
