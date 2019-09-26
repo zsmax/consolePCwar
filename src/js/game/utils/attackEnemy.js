@@ -3,7 +3,6 @@ import { random } from "./random";
 import { settings } from "./settings";
 import { printMessage } from "../printMessage";
 
-// TODO:
 export function attackEnemy(who, attack) {
 
     let attackPower = random(settings.attacks[attack].min, settings.attacks[attack].max);
@@ -35,22 +34,41 @@ export function attackEnemy(who, attack) {
         }
 
         if (self) {
-            settings[self].health += attackPower;
+
+            if (settings[self].health + attackPower > 100) {
+                settings[self].health = 100;
+            } else {
+                settings[self].health += attackPower;
+            };
         }
         if (enemy) {
             settings[enemy].health -= attackPower;
         }
 
-        let printChouse = `${attack} : ${attackPower} points`;
+        // beauty output
+        let printAttack;
+        switch (attack) {
+            case 'lowKick':
+                printAttack = 'low kick';
+                break;
+            case 'highKick':
+                printAttack = "high kick";
+                break;
+            case 'heal':
+                printAttack = 'heal';
+                break;
+            default:
+                console.error('attack');
+                break;
+        }
+
+        printAttack = printAttack.toUpperCase();
+        let printChouse = `${printAttack} : ${attackPower} points`;
+
         printMessage(who, printChouse);
         if (who === player) {
             settings.start = true;
             startGame();
         }
-
     }
-
-    console.log('pc health: ', settings.pc.health);
-    console.log('player health: ', settings.player.health);
 }
-// [pc, player] = [player, pc]
