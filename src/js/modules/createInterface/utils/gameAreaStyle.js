@@ -1,7 +1,7 @@
 export const gameAreaStyle =
     'margin: 100px auto 0;' +
     'background: #303030; ' +
-    'width: 500px; ' +
+    'width: 600px; ' +
     'height: 530px; ' +
     'display: flex; ' +
     'flex-flow: row wrap; ' +

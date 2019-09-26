@@ -1,5 +1,5 @@
 export const gameFieldStyle =
-    'width: 290px; ' +
+    'width: 390px; ' +
     'height: 450px; ' +
     'margin: 0 auto; ' +
     'overflow-y: auto; ' +
