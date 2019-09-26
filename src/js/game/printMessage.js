@@ -19,6 +19,7 @@ export function printMessage(who, text) {
     if (classNames.hasOwnProperty(who)) {
         message.classList.add(classNames[who]);
         gameField.appendChild(message);
+        gameField.scrollTop = gameField.scrollHeight;
     } else {
         console.warn('error');
     }
