@@ -4,8 +4,10 @@ import { startGame } from "./game/startGame";
 import { printMessage } from "./game/printMessage";
 import { greetings } from "./game/greetings";
 
-// // REMOVE: the comments
+
 // // creation Start Button
+// IMPORTANT:
+// DO_NOT_REMOVE:
 // startButtonCreate();
 
 // const startButton = document.querySelector('.startButton');
@@ -14,7 +16,7 @@ import { greetings } from "./game/greetings";
 // startButton.addEventListener('click', function () {
 //     startButton.style.display = 'none';
 // });
-// REMOVE: end comments
+// REMOVE: only comments
 
 createInterface();
 // game intro

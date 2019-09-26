@@ -63,7 +63,7 @@ export function createInterface() {
     // player icon
     playerIcon.classList.add('playerIcon', 'icon');
     playerIcon.setAttribute('style', ' width: 100px; height: 100px; order: 1');
-    playerIcon.style.background = " transparrent url('./assets/img/playerIcon.png') center / cover no-repeat";
+    playerIcon.style.background = "transparent url('./assets/img/playerIcon.png') center / cover no-repeat";
 
     //  health bar 
     pcHealth.classList.add('pcHealth');

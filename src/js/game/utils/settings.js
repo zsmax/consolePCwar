@@ -1,30 +1,29 @@
 export const settings = {
 
+    start: true,
+
     pc: {
-        health: 100,
-        priority: {
-            1: 'lowKick',
-            2: 'highKick',
-            3: 'heal'
-        }
+        health: 70,
     },
     player: {
-        health: 100
+        health: 25
     },
-
-    // low kick range
-    lowKick: {
-        min: 18,
-        max: 25,
+    // type of attack
+    attacks: {
+        lowKick: {
+            // low kick range
+            min: 18,
+            max: 25,
+        },
+        highKick: {
+            // high kick range
+            min: 10,
+            max: 35,
+        },
+        heal: {
+            // healing range
+            min: 18,
+            max: 25,
+        }
     },
-    // high kick range
-    highKick: {
-        min: 10,
-        max: 35,
-    },
-    // healing range
-    heal: {
-        min: 18,
-        max: 25,
-    }
 };
