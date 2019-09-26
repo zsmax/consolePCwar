@@ -32,17 +32,19 @@ export function startGame(params) {
 
     if (pcHealth <= 0) {
         pcHealth = 0;
-        stopFight(player);
     } else if (playerHealth <= 0) {
         playerHealth = 0;
-        stopFight(pc);
-    }
 
+    }
     pcHealthPoint.textContent = pcHealth;
     pcHealthBar.style.width = pcHealth + '%';
     playerHealthPoint.textContent = playerHealth;
     playerHealthBar.style.width = playerHealth + '%';
-
+    if (!pcHealth) {
+        stopFight(player);
+    } else if (!playerHealth) {
+        stopFight(pc);
+    }
 
     if (settings.start) {
         order();
