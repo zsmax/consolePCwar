@@ -3,10 +3,10 @@ export const settings = {
     start: true,
 
     pc: {
-        health: 70,
+        health: 100,
     },
     player: {
-        health: 25
+        health: 100
     },
     // type of attack
     attacks: {
