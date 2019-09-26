@@ -5,25 +5,18 @@ import { printMessage } from "./game/printMessage";
 import { greetings } from "./game/greetings";
 
 
-// // creation Start Button
-// IMPORTANT:
-// DO_NOT_REMOVE:
-// startButtonCreate();
+// creation Start Button
+startButtonCreate();
 
-// const startButton = document.querySelector('.startButton');
-// // interface creation 
-// startButton.addEventListener('click', createInterface);
-// startButton.addEventListener('click', function () {
-//     startButton.style.display = 'none';
-// });
-// REMOVE: only comments
+const startButton = document.querySelector('.startButton');
+// interface creation 
+startButton.addEventListener('click', createInterface);
+startButton.addEventListener('click', function () {
+    startButton.style.display = 'none';
+});
 
-createInterface();
-// game intro
-greetings();
-startGame();
-
-
-
-
-
+// REMOVE:
+// createInterface();
+// // game intro
+// greetings();
+// startGame();
