@@ -20,8 +20,6 @@ export function playerGame() {
         }
     });
 
-
-
     function getAttack(params) {
 
         let attack;
@@ -44,7 +42,12 @@ export function playerGame() {
                 break;
         }
 
-        if (settings.attacks[attack]) {
+        if (settings.player.health == '100' && attack === 'heal') {
+
+            let wrongComand = `You don't need that at this moment. Try kicks`;
+            printMessage(system, wrongComand);
+
+        } else if (settings.attacks[attack]) {
             attackEnemy(player, attack);
         } else {
             let wrongComand = `low kick | high kick | heal`;
