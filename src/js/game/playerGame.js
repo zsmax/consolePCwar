@@ -40,6 +40,8 @@ export function playerGame() {
             case 'heal':
                 attack = 'heal';
                 break;
+            default:
+                break;
         }
 
         if (settings.player.health == '100' && attack === 'heal') {
