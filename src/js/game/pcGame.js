@@ -1,7 +1,7 @@
 import { settings } from "./utils/settings";
 import { random } from "./utils/random";
 import { attackEnemy } from "./utils/attackEnemy";
-import { pc } from "./startGame";
+import { pc, stopFight } from "./startGame";
 
 export function pcGame() {
 
@@ -16,6 +16,7 @@ export function pcGame() {
         return random(minAttack, maxAttack) - 1;
     };
 
+    
     // health is more 75%
     if (settings.pc.health > 75) {
 
@@ -46,11 +47,12 @@ export function pcGame() {
         }
         attack = attacks[attackNum];
 
-    } else {
-        
+    }  else {
         let attackNum = randomAttack();
         attack = attacks[attackNum];
     }
-
-    attackEnemy(pc, attack);
+    
+    if (settings.player.health > 0) {
+        attackEnemy(pc, attack);
+    }
 }
