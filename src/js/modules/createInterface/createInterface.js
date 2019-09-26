@@ -126,4 +126,13 @@ export function createInterface() {
     gameArea.appendChild(inputBlock);
     inputBlock.appendChild(input);
     inputBlock.appendChild(actionButton);
+
+    // addEventListener on enter for player
+    document.addEventListener('keyup', function (event) {
+
+        if (input.value && event.keyCode === 13) {
+            event.preventDefault();
+            actionButton.click();
+        }
+    });
 }

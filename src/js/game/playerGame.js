@@ -1,24 +1,54 @@
 import { settings } from "./utils/settings";
+import { printMessage } from "./printMessage";
+import { system, player } from "./startGame";
+import { attackEnemy } from "./utils/attackEnemy";
+
 
 export function playerGame() {
 
     console.warn('playerGame');
-
     settings.start = false;
 
-    const gameField = document.querySelector('.gameField'),
-        input = document.querySelector('input'),
+    const input = document.querySelector('input'),
         actionButton = document.querySelector('.actionButton');
 
     // const 
     // listener for button 
-
-    // on enter
-    document.addEventListener('keyup', function (event) {
-
-        if (input.value && event.keyCode === 13) {
-            event.preventDefault();
-            actionButton.click();
+    actionButton.addEventListener('click', () => {
+        if (input.value) {
+            getAttack();
         }
     });
+
+
+
+    function getAttack(params) {
+
+        let attack;
+        let text = input.value.toLowerCase();
+        input.value = '';
+
+        switch (text) {
+            case 'low kick':
+            case 'lowkick':
+            case 'low':
+                attack = 'lowKick';
+                break;
+            case 'high kick':
+            case 'high':
+            case 'highkick':
+                attack = 'highKick';
+                break;
+            case 'heal':
+                attack = 'heal';
+                break;
+        }
+
+        if (settings.attacks[attack]) {
+            attackEnemy(player, attack);
+        } else {
+            let wrongComand = `low kick | high kick | heal`;
+            printMessage(system, wrongComand);
+        }
+    }
 }
