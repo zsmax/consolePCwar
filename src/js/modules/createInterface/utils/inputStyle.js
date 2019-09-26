@@ -11,5 +11,5 @@ export const inputStyle = {
         'font-family: \'courier\'; ' +
         'border-top: 1px solid wheat;',
 
-    placeholder: 'low kick | high kick | heal (not case sensitive)'
+    placeholder: 'low kick | high kick | heal (not case|space sensitive)'
 };
