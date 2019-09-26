@@ -7,4 +7,5 @@ export const healthBar =
     'color: wheat; ' +
     'line-height: 23px; ' +
     'font-weight: bold; ' +
-    'z-index: 1;';
+    'z-index: 1;' +
+    'overflow: hidden';

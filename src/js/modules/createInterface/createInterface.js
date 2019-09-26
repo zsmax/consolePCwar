@@ -6,6 +6,8 @@ import { actionButtonStyle } from './utils/actionButtonStyle';
 import { inputBlockStyle } from './utils/inputBlockStyle';
 import { pcPlayerBlockStyle } from './utils/pcPlayerBlockStyle';
 import { healthBarIndicator } from './utils/healthBarIndicator';
+import { greetings } from '../../game/greetings';
+import { startGame } from '../../game/startGame';
 
 export function createInterface() {
     const app = document.querySelector('#app');
@@ -99,8 +101,11 @@ export function createInterface() {
     // activate health bar indicator
     pcHealth.appendChild(pcHealthBar);
     pcHealthBar.setAttribute('style', healthBarIndicator);
+    pcHealthBar.style.left = 0;
+
     playerHealth.appendChild(playerHealthBar);
     playerHealthBar.setAttribute('style', healthBarIndicator);
+    playerHealthBar.style.right = 0;
 
     // gamefield initialising
     gameField.classList.add('gameField');
@@ -135,4 +140,6 @@ export function createInterface() {
             actionButton.click();
         }
     });
+    greetings();
+    startGame();
 }
