@@ -3,6 +3,7 @@ import { printMessage } from "./printMessage";
 import { random } from "./utils/random";
 import { playerGame } from "./playerGame";
 import { pcGame } from "./pcGame";
+import { createLoseWindow } from "../modules/createInterface/createLoseWindow";
 
 
 export const system = 'system';
@@ -14,10 +15,34 @@ const turns = {
     player: 0
 };
 
-
 export function startGame(params) {
+    // createLoseWindow();
+
+    const pcHealthPoint = document.querySelector('.pcHealthPoint'),
+        playerHealthPoint = document.querySelector('.playerHealthPoint'),
+        pcHealthBar = document.querySelector('.pcHealthBar'),
+        playerHealthBar = document.querySelector('.playerHealthBar');
+
+
+    let pcHealth = settings.pc.health,
+        playerHealth = settings.player.health;
+
 
     // console.warn('startGame');
+
+    if (pcHealth <= 0) {
+        pcHealth = 0;
+        stopFight(player);
+    } else if (playerHealth <= 0) {
+        playerHealth = 0;
+        stopFight(pc);
+    }
+
+    pcHealthPoint.textContent = pcHealth;
+    pcHealthBar.style.width = pcHealth + '%';
+    playerHealthPoint.textContent = playerHealth;
+    playerHealthBar.style.width = playerHealth + '%';
+
 
     if (settings.start) {
         order();
@@ -32,6 +57,16 @@ export function startGame(params) {
     if (settings.start) {
         requestAnimationFrame(startGame);
     }
+}
+
+export function stopFight(winner) {
+    const inputAction = document.querySelector('input'),
+        actionButton = document.querySelector('.actionButton');
+    settings.start = false;
+    inputAction.setAttribute('disabled', true);
+    inputAction.setAttribute('placeholder', 'END GAME');
+    actionButton.setAttribute('disabled', true);
+    createLoseWindow(winner);
 }
 
 function order(params) {
@@ -78,13 +113,3 @@ function bones() {
     };
     return random(range.min, range.max);
 }
-
-
-// function playGame() {
-
-//     if (settings.start) {
-
-//         startGame();
-
-//     }
-// }
