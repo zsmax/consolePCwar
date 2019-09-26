@@ -1,4 +1,3 @@
-import { loseWindowStyle } from "./utils/loseWindowStyle";
 import { pc, player } from "../../game/startGame";
 
 export function createLoseWindow(winner) {
@@ -10,26 +9,30 @@ export function createLoseWindow(winner) {
     gameArea.style.filter = 'blur(1px)';
 
 
-    // const loseOrWin = () => {
-        app.style.position = 'relative';
-    loseWindow.setAttribute('style', loseWindowStyle);
-    loseWindow.style.width = `${gameArea.getBoundingClientRect().width}px`;
-    loseWindow.style.height = `${gameArea.getBoundingClientRect().height}px`;
-   
-    // };
-
     if (winner === pc) {
-        // loseOrWin();
-        loseWindow.style.background =
-            'url(./assets/img/you_lose.png) center/contain no-repeat;';
-        console.log("TCL: createLoseWindow -> loseWindow", loseWindow);
+        let backgroundImage = `url('./assets/img/you_lose.png')`;
+        loseWindowStyle(backgroundImage);
     } else if (winner === player) {
-        // loseOrWin();
-        loseWindow.style.background =
-            `transparent url(./assets/img/you_win.png) center/contain no-repeat;`;
-        console.log("TCL: createLoseWindow -> loseWindow", loseWindow);
+        let backgroundImage = `url('./assets/img/you_win.png')`;
+        loseWindowStyle(backgroundImage);
     } else {
         console.error('createLoseWindow -> winner?');
     }
-    app.appendChild(loseWindow);
+
+
+    function loseWindowStyle(backgroundImage) {
+        app.style.position = 'relative';
+        loseWindow.classList.add('.loseWindow');
+        loseWindow.style.height = `${gameArea.getBoundingClientRect().height}px`;
+        let style = 'position: absolute;' +
+            'z-index: 200;' +
+            `width: ${gameArea.getBoundingClientRect().width}px;` +
+            `height: ${gameArea.getBoundingClientRect().height}px;` +
+            'top: 50%;' +
+            'left: 50%;' +
+            'transform: translateX(-50%) translateY(-50%);' +
+            `background: transparent ${backgroundImage} center/contain no-repeat;`;
+        loseWindow.setAttribute('style', style);
+        app.appendChild(loseWindow);
+    }
 }
