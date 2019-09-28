@@ -1,22 +1,14 @@
 import { createInterface } from "./modules/createInterface/createInterface";
 import { startButtonCreate } from "./modules/startButtonCreate";
-import { startGame } from "./game/startGame";
-import { printMessage } from "./game/printMessage";
-import { greetings } from "./game/greetings";
 
 
 // creation Start Button
 startButtonCreate();
 
 const startButton = document.querySelector('.startButton');
-// interface creation 
+
+// event listeners on Start button
 startButton.addEventListener('click', createInterface);
 startButton.addEventListener('click', function () {
     startButton.style.display = 'none';
 });
-
-// REMOVE:
-// createInterface();
-// // game intro
-// greetings();
-// startGame();
