@@ -12,6 +12,7 @@ export function playerGame() {
     const input = document.querySelector('input'),
         actionButton = document.querySelector('.actionButton');
 
+    input.focus();
     // const 
     // listener for button 
     actionButton.addEventListener('click', () => {
