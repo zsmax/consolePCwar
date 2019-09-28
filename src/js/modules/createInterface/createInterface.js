@@ -8,6 +8,7 @@ import { pcPlayerBlockStyle } from './utils/pcPlayerBlockStyle';
 import { healthBarIndicator } from './utils/healthBarIndicator';
 import { greetings } from '../../game/greetings';
 import { startGame } from '../../game/startGame';
+import { printMessagesStyle } from './utils/printMessagesStyle';
 
 export function createInterface() {
     const app = document.querySelector('#app');
@@ -140,6 +141,27 @@ export function createInterface() {
             actionButton.click();
         }
     });
+
+    // styling output messages
+    const systemMessageStyles = document.createElement('style'),
+        pcMessageStyles = document.createElement('style'),
+        playerMessageStyles = document.createElement('style');
+
+    systemMessageStyles.type = 'text/css';
+    pcMessageStyles.type = 'text/css';
+    playerMessageStyles.type = 'text/css';
+
+    systemMessageStyles.innerHTML = `.system {${printMessagesStyle.system}};`;
+    pcMessageStyles.innerHTML = `.pc {${printMessagesStyle.pc}};`;
+    playerMessageStyles.innerHTML = `.player {${printMessagesStyle.player}};`;
+
+
+    document.querySelector('body').append(systemMessageStyles,
+        pcMessageStyles,
+        playerMessageStyles);
+
+
+
     greetings();
     startGame();
 }
