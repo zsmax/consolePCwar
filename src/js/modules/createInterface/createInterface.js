@@ -142,7 +142,7 @@ export function createInterface() {
         }
     });
 
-    // styling output messages
+    // creating styles for output messages
     const systemMessageStyles = document.createElement('style'),
         pcMessageStyles = document.createElement('style'),
         playerMessageStyles = document.createElement('style');
@@ -151,7 +151,7 @@ export function createInterface() {
     pcMessageStyles.type = 'text/css';
     playerMessageStyles.type = 'text/css';
 
-    systemMessageStyles.innerHTML = `.system {${printMessagesStyle.system}};`;
+    systemMessageStyles.innerHTML = `.system {${printMessagesStyle.system}}; `;
     pcMessageStyles.innerHTML = `.pc {${printMessagesStyle.pc}};`;
     playerMessageStyles.innerHTML = `.player {${printMessagesStyle.player}};`;
 
@@ -160,8 +160,7 @@ export function createInterface() {
         pcMessageStyles,
         playerMessageStyles);
 
-
-
+    // game start
     greetings();
     startGame();
 }
