@@ -1,5 +1,6 @@
 import { pc, player } from "../../game/startGame";
 import { settings } from "../../game/utils/settings";
+import { createReplayButton } from "./createReplayButton";
 
 export function createLoseWindow(winner) {
 
@@ -52,5 +53,6 @@ export function createLoseWindow(winner) {
             `background: transparent ${backgroundImage} center/contain no-repeat;`;
         loseWindow.setAttribute('style', style);
         app.appendChild(loseWindow);
+        createReplayButton();
     }
 }

@@ -1,0 +1,13 @@
+export const replayButtonStyle = `position: absolute;
+bottom: 29px;
+left: 50%;
+transform: translateX(-50%);
+z-index: 201;
+color: #303030;
+background: #35e435;
+padding: 15px 2rem;
+font-size: 24px;
+font-family: monospace;
+box-shadow: 0 0 60px black;
+letter-spacing: 0.05em;
+cursor: pointer;`;
