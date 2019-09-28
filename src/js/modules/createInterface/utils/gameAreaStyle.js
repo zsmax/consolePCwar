@@ -1,5 +1,5 @@
 export const gameAreaStyle =
-    'margin: 100px auto 0;' +
+    'margin: 10% auto 0;' +
     'background: #303030; ' +
     'width: 600px; ' +
     'height: 530px; ' +
