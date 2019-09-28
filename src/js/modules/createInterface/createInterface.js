@@ -6,7 +6,7 @@ import { actionButtonStyle } from './utils/actionButtonStyle';
 import { inputBlockStyle } from './utils/inputBlockStyle';
 import { pcPlayerBlockStyle } from './utils/pcPlayerBlockStyle';
 import { healthBarIndicator } from './utils/healthBarIndicator';
-import { greetings } from '../../game/greetings';
+import { greetings } from './greetings';
 import { startGame } from '../../game/startGame';
 import { printMessagesStyle } from './utils/printMessagesStyle';
 
