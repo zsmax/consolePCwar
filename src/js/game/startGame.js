@@ -73,7 +73,7 @@ export function stopFight(winner) {
 
 function order(params) {
 
-    const text = ' goes';
+    const text = 'Ход ';
 
     let pcTurn = bones(),
         playerTurn = bones();
@@ -81,8 +81,13 @@ function order(params) {
     turns.pc = 0;
     turns.player = 0;
 
+
     if (pcTurn != playerTurn) {
 
+        const printName = {
+            pc: 'компьютера',
+            player: 'игрока'
+        };
         let winner;
 
         if (pcTurn > playerTurn) {
@@ -94,12 +99,13 @@ function order(params) {
         turns[winner] = 1;
 
 
-        let throwBones = 'THROW BONES:';
-        let getBones = `${pc} got ${pcTurn}, you got ${playerTurn}`;
 
-        printMessage(system, throwBones);
-        printMessage(system, getBones);
-        printMessage(system, winner + text);
+        // let throwBones = 'THROW BONES:';
+        // let getBones = `${pc} got ${pcTurn}, you got ${playerTurn}`;
+
+        // printMessage(system, throwBones);
+        // printMessage(system, getBones);
+        printMessage(system, text + printName[winner]);
 
     } else {
         order();

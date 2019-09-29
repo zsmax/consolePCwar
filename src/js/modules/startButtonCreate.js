@@ -6,7 +6,7 @@ export function startButtonCreate(params) {
         startButton = document.createElement('button');
 
     startButton.classList.add('startButton');
-    startButton.textContent = "START GAME";
+    startButton.textContent = "НАЧАТЬ ИГРУ";
 
     startButton.setAttribute('style', startButtonStyle);
 

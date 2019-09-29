@@ -39,7 +39,7 @@ export function attackEnemy(who, attack) {
                 settings[self].health = 100;
             } else {
                 settings[self].health += attackPower;
-            };
+            }
         }
         if (enemy) {
             settings[enemy].health -= attackPower;
@@ -49,13 +49,13 @@ export function attackEnemy(who, attack) {
         let printAttack;
         switch (attack) {
             case 'lowKick':
-                printAttack = 'low kick';
+                printAttack = 'удар';
                 break;
             case 'highKick':
-                printAttack = "high kick";
+                printAttack = "сильный удар";
                 break;
             case 'heal':
-                printAttack = 'heal';
+                printAttack = 'аптечка';
                 break;
             default:
                 console.error('attack');
@@ -63,7 +63,7 @@ export function attackEnemy(who, attack) {
         }
 
         printAttack = printAttack.toUpperCase();
-        let printChouse = `${printAttack} : ${attackPower} points`;
+        let printChouse = `${printAttack} : ${attackPower}НР`;
 
         printMessage(who, printChouse);
         if (who === player) {

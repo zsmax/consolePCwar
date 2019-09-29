@@ -28,17 +28,13 @@ export function playerGame() {
         input.value = '';
 
         switch (text) {
-            case 'low kick':
-            case 'lowkick':
-            case 'low':
+            case 'удар':
                 attack = 'lowKick';
                 break;
-            case 'high kick':
-            case 'high':
-            case 'highkick':
+            case 'сильный удар':
                 attack = 'highKick';
                 break;
-            case 'heal':
+            case 'аптечка':
                 attack = 'heal';
                 break;
             default:
@@ -47,13 +43,14 @@ export function playerGame() {
 
         if (settings.player.health == '100' && attack === 'heal') {
 
-            let wrongComand = `You don't need that at this moment. Try kicks`;
+            let wrongComand = `Вам пока не нужна аптечка - попробуйте удары.`;
             printMessage(system, wrongComand);
 
         } else if (settings.attacks[attack]) {
             attackEnemy(player, attack);
         } else {
-            let wrongComand = `low kick | high kick | heal`;
+            let wrongComand = `Варианты атак:
+            УДАР | СИЛЬНЫЙ УДАР | АПТЕЧКА`;
             printMessage(system, wrongComand);
         }
     }

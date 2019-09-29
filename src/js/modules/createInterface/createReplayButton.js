@@ -10,7 +10,7 @@ export function createReplayButton() {
 
     replayButton.classList.add('replayButton');
     replayButton.setAttribute('style', replayButtonStyle);
-    replayButton.textContent = `REPLAY?`;
+    replayButton.textContent = `ПЕРЕИГРАЕМ?`;
     replayButton.addEventListener('click', () => {
         location.reload();
     });
