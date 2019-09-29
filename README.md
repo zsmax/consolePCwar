@@ -11,7 +11,7 @@ WEB версия игры доступна по ссылке [ИГРА](https://
 
     v10.XX.XX
 
-Если ответ отличается необходимо установить данное [окружение](https://nodejs.org/en/).
+Если ответ отличается необходимо установить окружение [Node.js](https://nodejs.org/en/).
 
 После установки загрузите данный [ФАЙЛ](https://github.com/zsmax/consoleWars/blob/master/console/game.js) игры.
 
