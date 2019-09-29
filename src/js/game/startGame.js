@@ -66,7 +66,7 @@ export function stopFight(winner) {
         actionButton = document.querySelector('.actionButton');
     settings.start = false;
     inputAction.setAttribute('disabled', true);
-    inputAction.setAttribute('placeholder', 'END GAME');
+    inputAction.setAttribute('placeholder', 'ИГРА - ВСЁ');
     actionButton.setAttribute('disabled', true);
     createLoseWindow(winner);
 }
